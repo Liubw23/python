@@ -1,0 +1,159 @@
+一. 变量
+理解为：存储数据
+type(), id()
+数据类型：
+      数字（int,float,complex）
+      布尔类型（True,False）
+      字符串 str
+      列表 list
+      元祖 tuple
+      字典 dict
+      集合 set
+      None 
+
+二. 标示符与关键字
+标示符（名称：变量名，方法名，类名）
+    规则：标示符由字母、下划线和数字组成，且数字不能开头，不能使用关键字
+    命名规则：驼峰命名法（大/小），下划线连接法
+关键字：and or if break class def ...
+     import keyword
+     keyword.kwlist
+
+三. 输入与输出
+ 输入：input
+ 输出：print
+ 格式化输入：%， format
+print('%s+%s=%s'%(1,1, 1+1))
+print('{}+{}={}'.format(1,1,1+1))
+
+四. 运算符
++ - * / // % ** 
+= += -= *= /= **= //=
+== != <> > < >= <=
+and or not
+ 
+五. 常用类型转换
+int, float，str, repr, eval, tuple, list
+
+六. 判断
+if A:
+  xxx
+elif B:
+  yyy
+else:
+  zzz
+嵌套：
+  if A:
+     if B:
+        xxx
+条件：布尔值
+
+
+七. 循环
+1.while A:
+    xxx
+2.for
+3.for else
+4.break, continue
+
+八. 字符串操作
+1.索引与切片
+2.replace, split, lower, upper, strip, join
+3.编码 （计算机只能处理数字，如果要处理文本，就必须先把文本转换为数字才能处理）
+(1)  8bit（比特） --> 1bytes（字节）  ; 1bytes  255 ; 2bytes  65535
+(2)  英文 ascii  127 (A:65)  1bytes
+      中文 gb2312 至少2bytes
+      日文 Shift_JIS 
+      统一 Unicode  通常2bytes, 生僻的字4bytes
+      Unicode转化  --> 可变长编码 utf-8  1-6bytes  英文 1bytes   中文 通常3bytes  生僻字符4-6bytes
+(3) ord() : 字符 --> 数字
+     chr()  : 数字 --> 字符
+(4) str另一种写法：十六进制表示法
+      '\u4e2d\u6587' == '中文'
+4. bytes类型
+   Python的字符串类型是str，在内存中以Unicode表示，一个字符对应若干个字节。如果要在网络上传输，或者保存到磁盘上，就需要把str变为以字节为单位的bytes
+   Python对bytes类型的数据用带b前缀的单引号或双引号表示
+5.str  <--->  bytes
+   str.encode('utf-8')
+   bytes.decode('utf-8', errors='ignore')
+6.格式化 %s，format
+
+
+九. 列表操作
+1.增 append, extend, insert
+2.删 del pop remove
+3.改 a[i]=x
+4.查 in, not in, index, count
+5.排 sort, sorted, reverse
+
+十. 元祖 tuple 可看作“不可变”的list
+0.一旦初始化就不能修改, 更安全
+1. tuple(1,)
+2. t = ('a', 'b', ['A', 'B'])
+   tuple所谓的“不变”是说，tuple的每个元素，指向永远不变。即指向'a'，就不能改成指向'b'，指向一个list，就不能改成指向其他对象，但指向的这个list本身是可变的
+
+
+十一. 字典 {key:value} key必须是不可变对象
+1.增 a[key]=value
+2.删 pop(key),  del a[key], del a, a.clear()
+3.改 a[key]=value1
+4.查 a[key], a.get(key, value0)
+5.排 sort, sorted
+len(), keys(), values(), items(), has_key()
+
+十二. 集合 set 
+1. set和dict类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在set中，没有重复的key;  不可以放入可变对象
+2. add(key)
+3. remove(key)
+4. 交集 s1 & s2
+    并集  s1 | s2
+
+十三. 函数
+1.定义 def 函数名(参数): 代码
+2.调用
+3.参数
+4.返回值 
+5.嵌套调用
+6.递归
+7.局部变量与全局变量
+8.可变类型(list,dict)与不可变类型(num, str, tuple)
+9.global
+10.匿名函数 lambda: 参数：表达式
+
+十四. 列表生成式,  生成器和迭代器
+1.[x for x in range(1,11)]
+  [x for x in range(1,11) if x%2==0]
+2. g = (x * x for x in range(10))
+    yield
+3. 可以直接作用于for循环的对象统称为可迭代对象：Iterable
+     （1）一类是集合数据类型，如list、tuple、dict、set、str等；
+      （2）一类是generator，包括生成器和带yield的generator function
+    可以被next()函数调用并不断返回下一个值的对象称为迭代器：Iterator
+
+十五. 类（Class）和实例（Instance）
+1. class 
+2. object 所有类的超类
+3. __init__
+4. self
+5. 属性
+     （1）类属性
+     （2）实例属性
+              a.实例属性属于各个实例所有，互不干扰；
+              b.类属性属于类所有，所有实例共享一个属性；
+              c.不要对实例属性和类属性使用相同的名字，否则将产生难以发现的错误。
+     （3）私有属性（只有内部可以修改）
+       
+6.方法
+     （1）类方法
+     （2）实例方法
+     （3）静态方法
+7.继承
+8.多态
+9.type(), isinstance(), dir(), hasattr(), getattr(), setattr()
+
+
+
+
+
+
+      
